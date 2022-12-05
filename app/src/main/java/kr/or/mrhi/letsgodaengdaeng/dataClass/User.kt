@@ -5,10 +5,11 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parceler
 import kotlinx.parcelize.Parcelize
 
-
-@Parcelize         //User Info
-data class User(val phone: String? = null, val password: String? = null,
-                val nickname: String? = null, val introduce: String? =null) : Parcelable {
+@Parcelize
+data class User(
+    val phone: String? = null, val password: String? = null,
+    val nickname: String? = null, val introduce: String? = null
+) : Parcelable {
 
     companion object : Parceler<User> {
         override fun create(parcel: Parcel): User {
@@ -27,7 +28,7 @@ data class User(val phone: String? = null, val password: String? = null,
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString(),
+        parcel.readString()
     )
 
 }
